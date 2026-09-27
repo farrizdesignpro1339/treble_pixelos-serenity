@@ -8,10 +8,11 @@
   <remote name="farriz" fetch="https://github.com/farrizdesignpro1339/" />
 
   <!-- device phh treble - TrebleDroid/device_phh_treble mentok android-16.0 (belum ada android-17.0) -->
-  <project path="device/phh/treble" name="TrebleDroid/device_phh_treble" remote="trebledroid" revision="android-16.0" clone-depth="1" />
+  <!-- NOTE: name relatif ke fetch, jangan pake org prefix (biar ga double TrebleDroid/TrebleDroid/...) -->
+  <project path="device/phh/treble" name="device_phh_treble" remote="trebledroid" revision="android-16.0" clone-depth="1" />
   <!-- treble app - vanilla trebledroid (skip hardening restlessos) -->
-  <project path="treble_app" name="TrebleDroid/treble_app" remote="trebledroid" revision="master" clone-depth="1" />
+  <project path="treble_app" name="treble_app" remote="trebledroid" revision="master" clone-depth="1" />
   <!-- hardware overlay - PAKE PUNYA LU (udah ada RedmiA5 serenity, commit 077c8da) -->
-  <project path="vendor/hardware_overlay" name="farrizdesignpro1339/vendorhardware_overlay" remote="farriz" revision="pie" clone-depth="1" />
+  <project path="vendor/hardware_overlay" name="vendorhardware_overlay" remote="farriz" revision="pie" clone-depth="1" />
   <!-- NOTE: vendor/pixel/gsans JANGAN ditambah di sini, udah ada di snippets/pixelos.xml bawaan PixelOS -->
 </manifest>
