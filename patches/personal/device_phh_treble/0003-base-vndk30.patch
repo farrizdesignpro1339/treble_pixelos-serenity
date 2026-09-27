@@ -1,0 +1,27 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: farrizdesignpro1339
+Date: Sat, 27 Sep 2026 00:00:00 +0700
+Subject: [PATCH 3/3] base: VNDK 30 for PixelOS GSI (ported from LineageOS_gsi)
+
+Ported from LineageOS_gsi 0005-base-providing-a-choice-of-additional-vndk...
+- base.mk: PRODUCT_EXTRA_VNDK_VERSIONS 28 29 -> 30
+- Generik, tidak ada dependensi Lineage. Perlu cek di A17 입장을
+  `PRODUCT_EXTRA_VNDK_VERSIONS` masih didukung (deprecated di A16+?).
+  Kalo build error, revert patch ini dulu.
+
+---
+ base.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/base.mk b/base.mk
+index f6f3982..2de7b50 100644
+--- a/base.mk
++++ b/base.mk
+@@ -255,4 +255,4 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+ PRODUCT_PRODUCT_PROPERTIES += \
+     persist.settings.large_screen_opt.enabled=true
+
+-PRODUCT_EXTRA_VNDK_VERSIONS += 28 29
++PRODUCT_EXTRA_VNDK_VERSIONS += 30
+--
+2.54.0
