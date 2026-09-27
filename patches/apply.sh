@@ -27,6 +27,12 @@ for project in $(
         [ "$p" == vendor/hardware/overlay ] && p=vendor/hardware_overlay
         [ "$p" == vendor/partner/gms ] && p=vendor/partner_gms
         pushd "$p" &>/dev/null
+        # skip folder yg cuma README / belum ada .patch (biar ga fatal glob kosong)
+        if ! ls "$patches"/"$tree"/"$project"/*.patch >/dev/null 2>&1; then
+                echo "  (no .patch files in $project, skipping)"
+                popd &>/dev/null
+                continue
+        fi
         for patch in "$patches"/"$tree"/"$project"/*.patch; do
                 echo ">> ${patch}"
                 if test -d .git; then
