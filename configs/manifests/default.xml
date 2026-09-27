@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- local_manifests buat PixelOS A17 GSI -->
+  <!-- base: https://github.com/PixelOS-AOSP/android_manifest -b seventeen -->
+  <!-- verified: seventeen ada, default revision android-17.0.0_r1, vendor/custom = PixelOS-AOSP/android_vendor_custom -->
+  <remote name="trebledroid" fetch="https://github.com/TrebleDroid/" />
+  <remote name="phh" fetch="https://github.com/phhusson/" />
+  <remote name="farriz" fetch="https://github.com/farrizdesignpro1339/" />
+
+  <!-- device phh treble - TrebleDroid/device_phh_treble mentok android-16.0 (belum ada android-17.0) -->
+  <project path="device/phh/treble" name="TrebleDroid/device_phh_treble" remote="trebledroid" revision="android-16.0" clone-depth="1" />
+  <!-- treble app - vanilla trebledroid (skip hardening restlessos) -->
+  <project path="treble_app" name="TrebleDroid/treble_app" remote="trebledroid" revision="master" clone-depth="1" />
+  <!-- hardware overlay - PAKE PUNYA LU (udah ada RedmiA5 serenity, commit 077c8da) -->
+  <project path="vendor/hardware_overlay" name="farrizdesignpro1339/vendorhardware_overlay" remote="farriz" revision="pie" clone-depth="1" />
+  <!-- NOTE: vendor/pixel/gsans JANGAN ditambah di sini, udah ada di snippets/pixelos.xml bawaan PixelOS -->
+</manifest>

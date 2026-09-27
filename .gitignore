@@ -1,0 +1,6 @@
+src/
+out/
+tmp/
+*.img
+*.xz
+.ccache/
